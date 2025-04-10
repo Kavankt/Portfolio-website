@@ -1,14 +1,17 @@
 import './App.css';
 import HeroMain from "./components/herosection/HeroMain";
 import NavbarMain from './components/navbar/NavbarMain';
-
+import StarBackground from './components/herosection/Background/StarBackground';
 
 function App() {
   return (
-    <main>
-      <NavbarMain />
-      <HeroMain/>
-    </main>
+    <>
+      <StarBackground />
+      <main>
+        <NavbarMain />
+        <HeroMain />
+      </main>
+    </>
   );
 }
 
