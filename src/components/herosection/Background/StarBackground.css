@@ -35,3 +35,13 @@
     transform: translate(50px, 100px) scale(1.2);
   }
 }
+/* global.css or index.css */
+.stars {
+  background: url('/path-to/stars.svg') repeat;
+  animation: twinkling 50s infinite linear;
+}
+
+@keyframes twinkling {
+  from { background-position: 0 0; }
+  to { background-position: -10000px 5000px; }
+}

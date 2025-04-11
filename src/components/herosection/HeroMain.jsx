@@ -15,7 +15,7 @@ const HeroMain = () => {
         </h1>
         <p className="mt-4 text-xl font-medium">Computer Science (Data Science)</p>
         <p className="mt-2 text-sm text-gray-300 max-w-md">
-          Creating Innovative, Functional, and User-Friendly Websites for Digital Solutions.
+        As a full-stack developer and data enthusiast, I’m constantly exploring new tools to build smarter, modern web solutions.
         </p>
 
         {/* Tech Stack */}
@@ -45,13 +45,13 @@ const HeroMain = () => {
 
         {/* Social Icons */}
         <div className="mt-6 flex gap-6 justify-center lg:justify-start">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Kavankt" target="_blank" rel="noopener noreferrer">
             <FaGithub size={24} />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/kavan-k-t/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin size={24} />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/kavannn._" target="_blank" rel="noopener noreferrer">
             <FaInstagram size={24} />
           </a>
         </div>
@@ -62,7 +62,7 @@ const HeroMain = () => {
         <img
           src={profilePic}
           alt="Profile"
-          className="w-[400px] h-auto rounded-2xl shadow-lg object-contain"
+          className="w-[350px] h-auto rounded-2xl shadow-lg object-contain"
         />
       </div>
     </section>
