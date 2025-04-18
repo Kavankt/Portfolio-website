@@ -4,7 +4,8 @@ import NavbarMain from './components/navbar/NavbarMain';
 import StarBackground from './components/herosection/Background/StarBackground';
 import AboutMe from "./components/aboutme/AboutMe";
 import SkillsSection from "./components/skills/SkillsSection";
-// import ContactSection from './components/contact/ContactSection'; 
+import Experience from './components/experience/Experience';
+import Contact from './components/contact/Contact';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <HeroMain />
         <AboutMe/>
         <SkillsSection />
+        <Experience />
+        <Contact />
         
       </main>
     </>
