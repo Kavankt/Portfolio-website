@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Tabs from './Tabs';
 import ProjectTab from './ProjectTab';
-import CertificatesTab from './CertificatesTab';
+import CertificatesTab from "../skills/certificates/CertificatesTab";
 import TechStackTab from './TechStackTab';
 
 const SkillsSection = () => {
