@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import CardProject from "./CardProject"; // ✅ Fixed path
+import CardProject from "../CardProject";
 import { projects } from "../../data/projects";
 
-const ProjectTab = () => {
+const ProjectsSection = () => {
   const [visibleProjects, setVisibleProjects] = useState(3);
 
   const handleSeeMore = () => {
@@ -10,7 +10,9 @@ const ProjectTab = () => {
   };
 
   return (
-    <div className="py-8">
+    <div className="w-full py-16 px-4 sm:px-8 lg:px-16">
+      <h2 className="text-4xl font-bold mb-8 text-center text-white">Projects</h2>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.slice(0, visibleProjects).map((project) => (
           <CardProject
@@ -38,4 +40,4 @@ const ProjectTab = () => {
   );
 };
 
-export default ProjectTab;
+export default ProjectsSection;
