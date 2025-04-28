@@ -7,3 +7,26 @@
 body {
   @apply bg-darkBrown;
 }
+/* Star hover animation */
+.star-1 {
+  animation: starAnimation 2s ease-in-out infinite;
+}
+
+.star-2 {
+  animation: starAnimation 2s ease-in-out infinite 0.5s;
+}
+
+@keyframes starAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

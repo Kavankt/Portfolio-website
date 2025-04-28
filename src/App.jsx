@@ -6,20 +6,34 @@ import AboutMe from "./components/aboutme/AboutMe";
 import SkillsSection from "./components/skills/SkillsSection";
 import Experience from './components/experience/Experience';
 import Contact from './components/contact/Contact';
+import { Routes, Route } from 'react-router-dom';
+import ProjectDetails from './components/skills/ProjectDetails';
 
 function App() {
   return (
     <>
+      {/* Elements that appear on EVERY page */}
       <StarBackground />
+      <NavbarMain />
+      
       <main>
-        <NavbarMain />
-        <HeroMain />
-        <AboutMe/>
-        <SkillsSection />
-        <Experience />
-        <Contact />
+        {/* Content that appears on the home page (/) */}
+        <Routes>
+          <Route path="/" element={
+            <>
+              <HeroMain />
+              <AboutMe />
+              <SkillsSection />
+              <Experience />
+              <Contact />
+            </>
+          } />
+          
+          {/* Other routes */}
+          <Route path="/projects/:id" element={<ProjectDetails />} />
+          <Route path="*" element={<h2>Page Not Found</h2>} />
         
-        
+        </Routes>
       </main>
     </>
   );
