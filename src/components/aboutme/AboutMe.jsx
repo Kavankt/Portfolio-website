@@ -12,11 +12,30 @@ const AboutSection = () => {
     >
       {/* Left content */}
       <div className="flex-1 text-center lg:text-left">
+        {/* Glowing “Hello, I’m Kavan” */}
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
-          Hello, my name’s <span className="text-purple-400">Kavan</span>
+          <span className="relative inline-block group">
+            {/* Glow backdrop */}
+            <span className="absolute inset-0 rounded-md bg-purple-400 opacity-30 blur-2xl group-hover:opacity-50 transition duration-300"></span>
+            {/* Gradient text + drop-shadow */}
+            <span className="relative 
+                             bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-500 
+                             text-transparent bg-clip-text 
+                             drop-shadow-[0_0_25px_rgba(168,85,247,0.7)] 
+                             group-hover:drop-shadow-[0_0_40px_rgba(168,85,247,0.9)] 
+                             transition duration-300">
+              Hello, I’m Kavan,
+            </span>
+          </span>
         </h2>
+
         <p className="text-lg text-gray-300 max-w-xl leading-relaxed mx-auto lg:mx-0">
-          I'm a Computer Science (Data Science) student passionate about Web Development. I specialize in building dynamic, responsive, and user-focused websites. From idea to execution, I strive to bring innovation and creativity to every project.
+          As a Computer Science & Engineering (Data Science) student, I’m deeply
+          passionate about Web Development. I specialize in crafting dynamic,
+          responsive, and user-oriented websites that not only look great but
+          work seamlessly. From the initial to final execution, I
+          dedicate myself to blending creativity and innovation to bring every
+          project to life with purpose and precision.
         </p>
 
         {/* Buttons */}
@@ -41,8 +60,8 @@ const AboutSection = () => {
         <div className="w-[280px] h-[400px] bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-500 p-1 rounded-[100px] shadow-lg">
           <img
             src={profilePic}
-            alt="Jaideep N"
-            className="w-full h-full object-cover rounded-[100px]"
+            alt="Kavan"
+            className="w-full h-full object-cover rounded-[70px]"
           />
         </div>
       </div>

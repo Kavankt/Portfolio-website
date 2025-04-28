@@ -16,8 +16,8 @@ const SkillsSection = () => {
       <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
       <div className="px-4">
         {activeTab === 'projects' && <ProjectTab />}
-        {activeTab === 'techstack' && <TechStackTab />}
         {activeTab === 'certificates' && <CertificatesTab />}
+        {activeTab === 'techstacks' && <TechStackTab />}
       </div>
     </section>
   );

@@ -93,7 +93,7 @@ const HeroMain = () => {
         <div className="mt-6 flex flex-wrap gap-4 justify-center lg:justify-start">
           <a
             href="#projects"
-            className="bg-[#18181B] border border-purple-500 px-4 py-1 rounded-sm flex items-center gap-2 hover:bg-purple-500 hover:shadow-[0_0_10px_2px_rgba(139,92,246,0.5)] transition-all duration-300"
+            className="bg-purple-600 px-4 py-1 rounded-sm flex items-center gap-2 hover:bg-purple-700 hover:shadow-[0_0_10px_2px_rgba(139,92,246,0.5)] transition-all duration-300"
           >
             Projects <FiExternalLink />
           </a>
