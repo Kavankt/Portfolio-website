@@ -4,7 +4,6 @@ const links = [
   { link: "About Me", section: "about" },
   { link: "Skills", section: "skills" },
   { link: "Experience", section: "experience" },
-  { link: "Projects", section: "projects" },
   { link: "Contact", section: "contact" },
 ];
 
@@ -17,9 +16,9 @@ const NavbarLinks = () => {
             spy={true}
             smooth={true}
             duration={500}
-            offset={-130}
+            offset={10}  // Fine-tuning for better centering
             to={link.section}
-            className="cursor-pointer text-white transition duration-300 ease-out transform hover:text-cyan hover:drop-shadow-[0_0_6px_rgba(0,255,255,0.7)]"
+            className="cursor-pointer text-white transition duration-300 ease-out transform hover:text-cyan hover:drop-shadow-[0,0,6px,rgba(0,255,255,0.7)]"
           >
             {link.link}
           </Link>

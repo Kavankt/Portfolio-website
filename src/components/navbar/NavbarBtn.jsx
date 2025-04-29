@@ -11,7 +11,7 @@ const NavbarBtn = () => {
       duration={500}
       offset={-120}
     >
-      <button className="relative inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-white font-semibold
+      <button className="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-2xl text-white font-semibold
         border border-cyan-400 bg-[#0b0f1a]/80 backdrop-blur-md
         shadow-[0_0_12px_rgba(0,255,255,0.3)]
         hover:shadow-[0_0_25px_rgba(0,255,255,0.8)]

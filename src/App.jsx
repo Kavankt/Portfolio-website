@@ -6,18 +6,34 @@ import AboutMe from "./components/aboutme/AboutMe";
 import SkillsSection from "./components/skills/SkillsSection";
 import Experience from './components/experience/Experience';
 import Contact from './components/contact/Contact';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import ProjectDetails from './components/skills/ProjectDetails';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const location = useLocation();
+  const [showNavbar, setShowNavbar] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Hide navbar if scrolled more than 50px from top
+      setShowNavbar(window.scrollY < 50);
+    };
+
+    if (location.pathname === "/") {
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    } else {
+      setShowNavbar(false); // hide navbar on other routes
+    }
+  }, [location]);
+
   return (
     <>
-      {/* Elements that appear on EVERY page */}
       <StarBackground />
-      <NavbarMain />
-      
+      {showNavbar && <NavbarMain />}
+
       <main>
-        {/* Content that appears on the home page (/) */}
         <Routes>
           <Route path="/" element={
             <>
@@ -28,11 +44,8 @@ function App() {
               <Contact />
             </>
           } />
-          
-          {/* Other routes */}
           <Route path="/projects/:id" element={<ProjectDetails />} />
-          <Route path="*" element={<h2>Page Not Found</h2>} />
-        
+          <Route path="*" element={<h2 style={{ color: 'white', textAlign: 'center' }}>Page Not Found</h2>} />
         </Routes>
       </main>
     </>

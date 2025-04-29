@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import Tabs from './Tabs';
 import ProjectTab from './ProjectTab';
 import CertificatesTab from "../skills/certificates/CertificatesTab";
@@ -8,13 +9,34 @@ const SkillsSection = () => {
   const [activeTab, setActiveTab] = useState('projects');
 
   return (
-    <section className="text-white py-12 px-4">
-      <h2 className="text-center text-4xl font-bold mb-4 text-purple-400">My Skills</h2>
-      <p className="text-center text-gray-300 mb-8">
+    <section id="skills" className="text-white py-16 px-6 md:px-20">
+      {/* Title animation */}
+      <motion.h2
+        className="text-4xl font-bold text-center mb-4 text-purple-400"
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        My Skills
+      </motion.h2>
+
+      {/* Subtitle */}
+      <motion.p
+        className="text-center text-gray-300 mb-8"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         Explore my journey through projects, certifications, and technical expertise...
-      </p>
+      </motion.p>
+
+      {/* Tabs */}
       <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
-      <div className="px-4">
+
+      {/* Tab Content */}
+      <div className="px-4 mt-8">
         {activeTab === 'projects' && <ProjectTab />}
         {activeTab === 'certificates' && <CertificatesTab />}
         {activeTab === 'techstacks' && <TechStackTab />}
