@@ -9,6 +9,7 @@ import Contact from './components/contact/Contact';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import ProjectDetails from './components/skills/ProjectDetails';
 import { useEffect, useState } from 'react';
+import ProjectTab from './components/skills/ProjectTab';
 
 function App() {
   const location = useLocation();
@@ -45,6 +46,7 @@ function App() {
             </>
           } />
           <Route path="/projects/:id" element={<ProjectDetails />} />
+          <Route path="/projects" element={<ProjectTab />}/>
           <Route path="*" element={<h2 style={{ color: 'white', textAlign: 'center' }}>Page Not Found</h2>} />
         </Routes>
       </main>

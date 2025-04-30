@@ -9,7 +9,7 @@ const SkillsSection = () => {
   const [activeTab, setActiveTab] = useState('projects');
 
   return (
-    <section id="skills" className="text-white py-16 px-6 md:px-20">
+    <section id="projects" className="text-white py-16 px-6 md:px-20">
       {/* Title animation */}
       <motion.h2
         className="text-4xl font-bold text-center mb-4 text-purple-400"

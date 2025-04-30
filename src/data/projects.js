@@ -3,7 +3,7 @@ export const projects = [
     id: "1PF",
     Title: "Portfolio Website",
     Description: "A sleek, responsive, and developer-focused personal portfolio built using modern web technologies like Next.js and Vite. This website showcases personal projects, certifications, skills, and professional background — serving as a digital resume and an online identity hub.",
-    Img: "/path/to/safezone-image.jpg", 
+    Img: "/images/portfolio.png", 
     ProjectLink: "",
   },
   {

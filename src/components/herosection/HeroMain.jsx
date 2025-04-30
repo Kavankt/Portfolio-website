@@ -75,7 +75,7 @@ const HeroMain = () => {
         <div className="mt-6 flex flex-wrap gap-3">
           {["ReactJS", "NextJS", "Python", "MySQL", "Zest"].map((tech) => (
             <div key={tech} className="relative group">
-              <div className="bg-blue-500 px-4 py-2 rounded-sm whitespace-nowrap transition-all duration-300 relative
+              <div className="bg-blue-500 px-4 py-2 rounded-md whitespace-nowrap transition-all duration-300 relative
                 hover:bg-blue-600
                 hover:scale-105
                 hover:shadow-[0_0_15px_3px_rgba(59,130,246,0.5)]
@@ -83,7 +83,7 @@ const HeroMain = () => {
                 font-semibold
                 border-2 border-white">
                 {tech}
-                <div className="absolute inset-0 rounded-sm pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-blue-400/20 via-blue-400/10 to-transparent"></div>
+                <div className="absolute inset-0 rounded-md pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-blue-400/20 via-blue-400/10 to-transparent"></div>
               </div>
             </div>
           ))}
