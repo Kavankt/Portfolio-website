@@ -18,7 +18,7 @@ const techStack = [
   { name: 'Flutter', icon: '/tech/flutter.svg' },
   { name: 'Flask', icon: '/tech/flask.svg' },
   { name: 'Firebase', icon: '/tech/firebase.svg' },
-  { name: 'Zest', icon: '/tech/zest.svg' },
+  { name: 'Jest', icon: '/tech/jest.svg' },
   { name: 'Linux', icon: '/tech/linux.svg' },
   { name: 'Vercel', icon: '/tech/vercel.svg' }
 ];

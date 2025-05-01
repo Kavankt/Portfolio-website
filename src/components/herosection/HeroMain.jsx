@@ -73,7 +73,7 @@ const HeroMain = () => {
 
         {/* Tech Stack */}
         <div className="mt-6 flex flex-wrap gap-3">
-          {["ReactJS", "NextJS", "Python", "MySQL", "Zest"].map((tech) => (
+          {["ReactJS", "NextJS", "Python", "MySQL", "Jest"].map((tech) => (
             <div key={tech} className="relative group">
               <div className="bg-blue-500 px-4 py-2 rounded-md whitespace-nowrap transition-all duration-300 relative
                 hover:bg-blue-600
@@ -120,11 +120,14 @@ const HeroMain = () => {
       </div>
 
       {/* Right Section - Profile Picture */}
-      <div className="flex-1 mt-10 lg:mt-0 flex justify-center">
+      <div className="flex-1 mt-10 lg:mt-0 flex justify-end
+      
+      
+      ">
         <img
           src={profilePic}
           alt="Profile"
-          className="w-[500px] h-auto rounded-sm shadow-lg object-contain"
+          className="w-[550px] h-auto rounded-sm shadow-lg object-contain"
         />
       </div>
     </section>
