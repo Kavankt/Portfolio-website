@@ -41,7 +41,7 @@ const Contact = () => {
     <section id="contact" className="pt-6 pb-20 px-6 md:px-20 text-white">
       {/* Animated Heading */}
       <motion.h2
-        className="text-4xl font-bold text-center mb-12 text-purple-400"
+        className="text-white text-3xl font-semibold mb-4"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}

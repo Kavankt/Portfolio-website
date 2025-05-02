@@ -6,6 +6,8 @@ import AboutMe from "./components/aboutme/AboutMe";
 import SkillsSection from "./components/skills/SkillsSection";
 import Experience from './components/experience/Experience';
 import Contact from './components/contact/Contact';
+
+
 import { Routes, Route, useLocation } from 'react-router-dom';
 import ProjectDetails from './components/skills/ProjectDetails';
 import { useEffect, useState } from 'react';
@@ -17,7 +19,6 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Hide navbar if scrolled more than 50px from top
       setShowNavbar(window.scrollY < 50);
     };
 
@@ -25,7 +26,7 @@ function App() {
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     } else {
-      setShowNavbar(false); // hide navbar on other routes
+      setShowNavbar(false);
     }
   }, [location]);
 
@@ -42,11 +43,13 @@ function App() {
               <AboutMe />
               <SkillsSection />
               <Experience />
+ 
               <Contact />
+              
             </>
           } />
           <Route path="/projects/:id" element={<ProjectDetails />} />
-          <Route path="/projects" element={<ProjectTab />}/>
+          <Route path="/projects" element={<ProjectTab />} />
           <Route path="*" element={<h2 style={{ color: 'white', textAlign: 'center' }}>Page Not Found</h2>} />
         </Routes>
       </main>

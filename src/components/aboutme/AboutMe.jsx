@@ -13,7 +13,7 @@ const AboutSection = () => {
     >
       {/* Section Heading */}
       <motion.h2
-        className="text-4xl font-bold text-center mb-12 text-purple-400"
+        className="text-white text-4xl font-bold"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
