@@ -28,12 +28,14 @@ const AboutSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="relative inline-block group">
               <span className="absolute inset-0 rounded-md bg-purple-400 opacity-30 blur-2xl group-hover:opacity-50 transition duration-300"></span>
-              <span className="relative 
-                               bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-500 
-                               text-transparent bg-clip-text 
-                               drop-shadow-[0_0_25px_rgba(168,85,247,0.7)] 
-                               group-hover:drop-shadow-[0_0_40px_rgba(168,85,247,0.9)] 
-                               transition duration-300">
+              <span
+                className="relative 
+                           bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-500 
+                           text-transparent bg-clip-text 
+                           drop-shadow-[0_0_25px_rgba(168,85,247,0.7)] 
+                           group-hover:drop-shadow-[0_0_40px_rgba(168,85,247,0.9)] 
+                           transition duration-300"
+              >
                 Hello, I’m Kavan,
               </span>
             </span>
@@ -67,11 +69,19 @@ const AboutSection = () => {
 
         {/* Right image */}
         <div className="flex-1 flex justify-center relative">
-          <div className="w-[280px] h-[400px] bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-500 p-1 rounded-[100px] shadow-lg">
+          <div
+            className="w-[280px] h-[400px] 
+                       bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-500 
+                       p-1 rounded-[100px] shadow-lg 
+                       animate-glow 
+                       hover:shadow-[0_0_80px_10px_rgba(168,85,247,0.9)] 
+                       transition-shadow duration-500 ease-in-out"
+            style={{ willChange: "box-shadow" }}
+          >
             <img
               src={profilePic}
               alt="Kavan"
-              className="w-full h-full object-cover rounded-[70px]"
+              className="w-full h-full object-cover rounded-[70px] transition duration-500 ease-in-out"
             />
           </div>
         </div>
