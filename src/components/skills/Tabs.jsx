@@ -7,8 +7,8 @@ const Tabs = ({ activeTab, setActiveTab }) => {
     <div
       role="tablist"
       className="
-        flex flex-row flex-wrap items-stretch justify-center 
-        gap-4 mb-10 
+        flex flex-col sm:flex-row items-center justify-center 
+        gap-2 sm:gap-4 mb-10 
         overflow-x-auto no-scrollbar
         px-2
       "
@@ -18,7 +18,7 @@ const Tabs = ({ activeTab, setActiveTab }) => {
 
         // Base styling for all tabs
         const base = [
-          'flex-1 min-w-[120px]',         // share space, but not below 120px
+          'w-full sm:flex-1 sm:min-w-[120px]', // full width on mobile, flexible on desktop
           'px-4 sm:px-6',                 // horizontal padding
           'py-3 sm:py-4',                 // vertical padding
           'rounded-3xl',
