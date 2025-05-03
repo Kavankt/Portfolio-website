@@ -6,16 +6,21 @@ const Tabs = ({ activeTab, setActiveTab }) => {
   return (
     <div
       role="tablist"
-      className="flex flex-col md:flex-row items-stretch justify-center gap-4 mb-10"
+      className="
+        flex flex-row flex-wrap items-stretch justify-center 
+        gap-4 mb-10 
+        overflow-x-auto no-scrollbar
+        px-2
+      "
     >
       {tabs.map((tab) => {
         const isActive = activeTab === tab;
 
         // Base styling for all tabs
         const base = [
-          'w-full md:min-w-[160px]',       // full‑width on mobile, min width on md+
-          'px-4 sm:px-6',                  // mobile → sm padding
-          'py-3 sm:py-4',                  // smaller mobile height
+          'flex-1 min-w-[120px]',         // share space, but not below 120px
+          'px-4 sm:px-6',                 // horizontal padding
+          'py-3 sm:py-4',                 // vertical padding
           'rounded-3xl',
           'text-base sm:text-lg md:text-xl',
           'font-semibold uppercase tracking-wide',
@@ -23,7 +28,7 @@ const Tabs = ({ activeTab, setActiveTab }) => {
           'border-2 border-white backdrop-blur-md',
           'shadow-[0_0_15px_rgba(255,255,255,0.3)]',
           'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400',
-          'text-center',
+          'text-center whitespace-nowrap',
         ].join(' ');
 
         // Active state
@@ -34,11 +39,11 @@ const Tabs = ({ activeTab, setActiveTab }) => {
           'shadow-[0_0_20px_rgba(255,255,255,0.7)]',
         ].join(' ');
 
-        // Inactive hover only on md+
-        const hoverMd = [
+        // Inactive with subtle hover
+        const hoverStyles = [
           'bg-black/30 text-gray-300',
-          'md:hover:bg-gradient-to-br md:hover:from-purple-600/60 md:hover:via-pink-500/60 md:hover:to-indigo-700/60',
-          'md:hover:bg-[length:200%] md:hover:animate-gradient-flow md:hover:text-white md:hover:scale-105',
+          'hover:bg-gradient-to-br hover:from-purple-600/60 hover:via-pink-500/60 hover:to-indigo-700/60',
+          'hover:bg-[length:200%] hover:animate-gradient-flow hover:text-white hover:scale-105',
         ].join(' ');
 
         return (
@@ -47,7 +52,7 @@ const Tabs = ({ activeTab, setActiveTab }) => {
             role="tab"
             aria-selected={isActive}
             onClick={() => setActiveTab(tab)}
-            className={`${base} ${isActive ? activeStyles : hoverMd}`}
+            className={`${base} ${isActive ? activeStyles : hoverStyles}`}
             type="button"
           >
             {tab.charAt(0).toUpperCase() + tab.slice(1)}
