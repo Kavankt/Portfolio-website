@@ -11,16 +11,18 @@ const ProjectTab = () => {
 
   return (
     <div className="py-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Mobile-first: flex-col with centered, full‑width cards */}
+      <div className="flex flex-col items-center gap-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8">
         {projects.slice(0, visibleProjects).map((project) => (
-          <CardProject
-            key={project.id}
-            id={project.id}
-            Title={project.Title}
-            Description={project.Description}
-            Img={project.Img}
-            ProjectLink={project.ProjectLink}
-          />
+          <div key={project.id} className="w-full max-w-md">
+            <CardProject
+              id={project.id}
+              Title={project.Title}
+              Description={project.Description}
+              Img={project.Img}
+              ProjectLink={project.ProjectLink}
+            />
+          </div>
         ))}
       </div>
 
