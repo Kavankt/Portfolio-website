@@ -8,10 +8,11 @@ const NavbarToggler = () => {
   const setToggleMenu = () => {
     dispatch(toggleMenu());
   };
+
   return (
     <button
-      className="text-2xl p-3 border border-orange rounded-full"
       onClick={setToggleMenu}
+      className="text-white text-3xl p-1 hover:text-purple-400 transition duration-300"
     >
       <GiHamburgerMenu />
     </button>

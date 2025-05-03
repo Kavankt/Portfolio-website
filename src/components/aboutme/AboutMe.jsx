@@ -33,8 +33,12 @@ const AboutSection = () => {
             </h3>
 
             <p className="text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8">
-              As a Computer Science & Engineering (Data Science) student, I'm deeply
-              passionate about Web Development...
+            As a Computer Science & Engineering (Data Science) student, I’m deeply
+            passionate about Web Development. I specialize in crafting dynamic,
+            responsive, and user-oriented websites that not only look great but
+            work seamlessly. From the initial to final execution, I
+            dedicate myself to blending creativity and innovation to bring every
+            project to life with purpose and precision.
             </p>
 
             <div className="flex gap-4 justify-center lg:justify-start">

@@ -48,16 +48,19 @@ const HeroMain = () => {
   return (
     <section className="w-full min-h-screen flex flex-col-reverse lg:flex-row items-center justify-center px-4 md:px-10 lg:px-20 py-10 gap-10 text-white relative">
       {/* Left Section */}
-      <div className="flex-1 w-full text-center lg:text-left order-last lg:order-first">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+      <div className="flex-1 w-full text-center lg:text-left">
+        <h1 className="text-3xl sm:text-3xl md:text-4xl font-extrabold leading-tight">
           <span className="text-white font-sans">
             {displayText}
             <span className="animate-pulse">|</span>
           </span>
           <br />
-          {/* Full name for mobile and larger screens */}
-          <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-transparent bg-clip-text drop-shadow-[0_0_25px_#60a5fa]">
-            KAVAN K T
+          {/* Glowing Developer Text */}
+          <span className="relative inline-block mt-4 group">
+            <span className="absolute inset-0 rounded-md bg-blue-400 opacity-30 blur-2xl group-hover:opacity-50 transition duration-300"></span>
+            <span className="relative text-5xl sm:text-6xl font-extrabold bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text drop-shadow-[0_0_25px_#60a5fa] group-hover:drop-shadow-[0_0_40px_#60a5fa] transition duration-300">
+              Developer
+            </span>
           </span>
         </h1>
 
@@ -126,7 +129,7 @@ const HeroMain = () => {
       </div>
 
       {/* Right Section - Profile Picture */}
-      <div className="flex-1 w-full flex justify-center lg:justify-end order-first lg:order-last">
+      <div className="flex-1 w-full flex justify-center lg:justify-end">
         <img
           src={profilePic}
           alt="Profile"
