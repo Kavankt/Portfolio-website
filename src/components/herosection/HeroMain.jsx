@@ -55,8 +55,8 @@ const HeroMain = () => {
             <span className="animate-pulse">|</span>
           </span>
           <br />
-          {/* Full name for mobile and larger screens */}
-          <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-transparent bg-clip-text drop-shadow-[0_0_25px_#60a5fa]">
+          {/* Modified name section for better mobile visibility */}
+          <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 drop-shadow-[0_0_25px_#60a5fa]">
             KAVAN K T
           </span>
         </h1>
