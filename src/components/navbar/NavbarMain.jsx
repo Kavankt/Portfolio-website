@@ -8,7 +8,7 @@ const NavbarMain = () => {
   const menuOpen = useSelector((state) => state.menu.menuOpen);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#0f172a] sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md sm:shadow-none">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-[#0f172a] sm:bg-transparent shadow-md sm:shadow-none">
       <div className="flex items-center justify-between w-full max-w-[1300px] mx-auto px-4 py-4">
         {/* Logo */}
         <NavbarLogo />
@@ -21,8 +21,7 @@ const NavbarMain = () => {
         {/* Right section: Resume button + toggler */}
         <div className="flex items-center gap-4">
           <NavbarBtn />
-
-          {/* Mobile Toggler - visible only on mobile, styled separately */}
+          {/* Toggler - shown only on small screens */}
           <div className="lg:hidden">
             <NavbarToggler />
           </div>
