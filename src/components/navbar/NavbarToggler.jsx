@@ -12,7 +12,7 @@ const NavbarToggler = () => {
   return (
     <button
       onClick={setToggleMenu}
-      className="text-white text-3xl p-1 hover:text-purple-400 transition duration-300"
+      className="text-white text-3xl p-2 rounded-md bg-[#1e293b] sm:bg-transparent hover:text-purple-400 transition duration-300"
     >
       <GiHamburgerMenu />
     </button>
