@@ -1,4 +1,3 @@
-// src/components/navbar/NavbarToggler.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -14,21 +13,27 @@ const NavbarToggler = () => {
     <motion.button
       type="button"
       onClick={() => dispatch(toggleMenu())}
-      animate={{ rotate: menuOpen ? 180 : 0 }}
+      animate={{ rotate: menuOpen ? 180 : 0 }} // Rotate on toggle
       transition={{ type: "spring", stiffness: 400, damping: 20 }}
-      whileTap={{ scale: 0.9 }}
+      whileTap={{ scale: 0.95 }} // Slight scale down on tap
       className="
         p-2
-        bg-transparent          /* fully transparent */
+        bg-transparent
         text-white
         text-3xl
-        animate-glow            /* continuous glow animation */
-        hover:scale-110         /* subtle pop on hover */
-        transition-transform
+        hover:scale-110
+        hover:text-purple-500
+        transition-all
         duration-300
+        relative
+        animate-glow
       "
     >
-      {menuOpen ? <IoMdClose /> : <GiHamburgerMenu />}
+      {menuOpen ? (
+        <IoMdClose className="relative z-10" />
+      ) : (
+        <GiHamburgerMenu className="relative z-10" />
+      )}
     </motion.button>
   );
 };

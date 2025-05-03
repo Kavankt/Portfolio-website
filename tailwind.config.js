@@ -1,8 +1,13 @@
+// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  safelist: [
+    'animate-glow',    // ensure this class never gets purged
+    'shadow-glow',
   ],
   theme: {
     screens: {
@@ -30,15 +35,13 @@ export default {
         darkGrey: "#3f4441",
       },
       boxShadow: {
+        // you can now use 'shadow-glow' to apply this one-off
+        glow: "0 0 20px rgba(168,85,247,0.6)",
         cyanShadow: "0px 0px 20px 0px rgba(94, 206, 220, 0.5)",
         cyanBigShadow: "10px 10px 1000px 500px rgba(94, 206, 220, 0.3)",
         cyanMediumShadow: "10px 10px 200px 150px rgba(94, 206, 220, 0.5)",
         orangeBigShadow: "10px 10px 10000px 500px rgba(240, 169, 79, 0.3)",
         orangeMediumShadow: "10px 10px 2000px 150px rgba(240, 169, 79, 0.5)",
-      },
-      fontFamily: {
-        body: ['Josefin Sans'],
-        special: ['Roboto'],
       },
       keyframes: {
         glow: {
