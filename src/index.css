@@ -29,4 +29,9 @@ body {
     transform: scale(1);
     opacity: 1;
   }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
 }

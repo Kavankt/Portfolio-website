@@ -46,12 +46,11 @@ const HeroMain = () => {
   }, [currentIndex, isDeleting, currentWordIndex]);
 
   return (
-    <section className="w-full min-h-screen text-white flex flex-col lg:flex-row justify-center items-center px-6 lg:px-20 relative gap-10">
+    <section className="w-full min-h-screen flex flex-col-reverse lg:flex-row items-center justify-center px-4 md:px-10 lg:px-20 py-10 gap-10 text-white relative">
       {/* Left Section */}
-      <div className="flex-1 text-center lg:text-left mt-16 lg:mt-0">
-        <h1 className="text-4xl font-extrabold leading-tight">
+      <div className="flex-1 w-full text-center lg:text-left">
+        <h1 className="text-3xl sm:text-3xl md:text-4xl font-extrabold leading-tight">
           <span className="text-white font-sans">
-          
             {displayText}
             <span className="animate-pulse">|</span>
           </span>
@@ -59,33 +58,28 @@ const HeroMain = () => {
           {/* Glowing Developer Text */}
           <span className="relative inline-block mt-4 group">
             <span className="absolute inset-0 rounded-md bg-blue-400 opacity-30 blur-2xl group-hover:opacity-50 transition duration-300"></span>
-            <span className="relative text-6xl font-extrabold bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text drop-shadow-[0_0_25px_#60a5fa] group-hover:drop-shadow-[0_0_40px_#60a5fa] transition duration-300">
+            <span className="relative text-5xl sm:text-6xl font-extrabold bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text drop-shadow-[0_0_25px_#60a5fa] group-hover:drop-shadow-[0_0_40px_#60a5fa] transition duration-300">
               Developer
             </span>
           </span>
         </h1>
 
-        <p className="mt-4 text-xl font-medium text-gray-300">
+        <p className="mt-4 text-lg sm:text-xl font-medium text-gray-300">
           Computer Science & Engineering (Data Science)
         </p>
-        <p className="mt-2 text-sm text-gray-400 max-w-md">
+        <p className="mt-2 text-sm sm:text-base text-gray-400 max-w-md mx-auto lg:mx-0">
           As a full-stack developer and data enthusiast, I'm constantly exploring new tools to build smarter, modern web solutions.
         </p>
 
         {/* Tech Stack */}
-        <div className="mt-6 flex flex-wrap gap-3">
+        <div className="mt-6 flex flex-wrap justify-center lg:justify-start gap-3">
           {["ReactJS", "NextJS", "Python", "MySQL", "Jest"].map((tech) => (
             <div key={tech} className="relative group">
-            <div className="bg-transparent text-white px-4 py-2 rounded-md whitespace-nowrap transition-all duration-300 relative
-              hover:bg-blue-600/30
-              hover:scale-105
-              hover:shadow-[0_0_15px_3px_rgba(59,130,246,0.5)]
-              font-semibold
-              border-2 border-white">
-              {tech}
-              <div className="absolute inset-0 rounded-md pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-blue-400/20 via-blue-400/10 to-transparent"></div>
+              <div className="bg-transparent text-white px-4 py-2 rounded-md whitespace-nowrap transition-all duration-300 relative hover:bg-blue-600/30 hover:scale-105 hover:shadow-[0_0_15px_3px_rgba(59,130,246,0.5)] font-semibold border-2 border-white">
+                {tech}
+                <div className="absolute inset-0 rounded-md pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-blue-400/20 via-blue-400/10 to-transparent"></div>
+              </div>
             </div>
-          </div>
           ))}
         </div>
 
@@ -107,27 +101,39 @@ const HeroMain = () => {
 
         {/* Social Icons */}
         <div className="mt-6 flex gap-6 justify-center lg:justify-start">
-          <a href="https://github.com/Kavankt" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors duration-300 hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.6)]">
+          <a
+            href="https://github.com/Kavankt"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-purple-400 transition-colors duration-300 hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.6)]"
+          >
             <FaGithub size={24} />
           </a>
-          <a href="https://www.linkedin.com/in/kavan-k-t/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors duration-300 hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.6)]">
+          <a
+            href="https://www.linkedin.com/in/kavan-k-t/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-purple-400 transition-colors duration-300 hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.6)]"
+          >
             <FaLinkedin size={24} />
           </a>
-          <a href="https://www.instagram.com/kavannn._" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors duration-300 hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.6)]">
+          <a
+            href="https://www.instagram.com/kavannn._"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-purple-400 transition-colors duration-300 hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.6)]"
+          >
             <FaInstagram size={24} />
           </a>
         </div>
       </div>
 
       {/* Right Section - Profile Picture */}
-      <div className="flex-1 mt-10 lg:mt-0 flex justify-end
-      
-      
-      ">
+      <div className="flex-1 w-full flex justify-center lg:justify-end">
         <img
           src={profilePic}
           alt="Profile"
-          className="w-[550px] h-auto rounded-sm shadow-lg object-contain"
+          className="w-[250px] sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[550px] h-auto rounded-sm shadow-lg object-contain"
         />
       </div>
     </section>
