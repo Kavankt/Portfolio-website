@@ -4,51 +4,48 @@ const Tabs = ({ activeTab, setActiveTab }) => {
   const tabs = ['projects', 'certificates', 'techstacks'];
 
   return (
-    <div
-      role="tablist"
-      className="flex flex-col md:flex-row items-stretch justify-center gap-4 mb-10"
-    >
+    <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-10">
       {tabs.map((tab) => {
         const isActive = activeTab === tab;
 
         // Base styling for all tabs
-        const base = [
-          'w-full md:min-w-[160px]',       // full‑width on mobile, min width on md+
-          'px-4 sm:px-6',                  // mobile → sm padding
-          'py-3 sm:py-4',                  // smaller mobile height
+        const baseClasses = [
+          'min-w-[160px]',        // allow shrinking but keep a minimum
+          'px-6',                 // horizontal padding
+          'py-6',                 // vertical padding
           'rounded-3xl',
-          'text-base sm:text-lg md:text-xl',
+          'text-lg md:text-xl',
           'font-semibold uppercase tracking-wide',
           'transition-all duration-300 transform-gpu',
           'border-2 border-white backdrop-blur-md',
           'shadow-[0_0_15px_rgba(255,255,255,0.3)]',
-          'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400',
-          'text-center',
+          'hover:shadow-[0_0_25px_rgba(255,255,255,0.4)]',
+          'hover:-rotate-2',
+          'cursor-pointer',
+          'flex-1 max-w-xs',      // let them grow but cap width
+          'text-center',          // center text
         ].join(' ');
 
-        // Active state
-        const activeStyles = [
+        // Active tab styles (low-opacity purple gradient)
+        const activeClasses = [
           'bg-gradient-to-br from-purple-600/60 via-pink-500/60 to-indigo-700/60',
           'bg-[length:200%] animate-gradient-flow',
           'text-white scale-105',
           'shadow-[0_0_20px_rgba(255,255,255,0.7)]',
         ].join(' ');
 
-        // Inactive hover only on md+
-        const hoverMd = [
+        // Inactive tabs with purple-gradient hover (also low opacity)
+        const inactiveHoverClasses = [
           'bg-black/30 text-gray-300',
-          'md:hover:bg-gradient-to-br md:hover:from-purple-600/60 md:hover:via-pink-500/60 md:hover:to-indigo-700/60',
-          'md:hover:bg-[length:200%] md:hover:animate-gradient-flow md:hover:text-white md:hover:scale-105',
+          'hover:bg-gradient-to-br hover:from-purple-600/60 hover:via-pink-500/60 hover:to-indigo-700/60',
+          'hover:bg-[length:200%] hover:animate-gradient-flow hover:text-white hover:scale-105',
         ].join(' ');
 
         return (
           <button
             key={tab}
-            role="tab"
-            aria-selected={isActive}
             onClick={() => setActiveTab(tab)}
-            className={`${base} ${isActive ? activeStyles : hoverMd}`}
-            type="button"
+            className={`${baseClasses} ${isActive ? activeClasses : inactiveHoverClasses}`}
           >
             {tab.charAt(0).toUpperCase() + tab.slice(1)}
           </button>
