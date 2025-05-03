@@ -46,7 +46,19 @@ const HeroMain = () => {
   }, [currentIndex, isDeleting, currentWordIndex]);
 
   return (
-    <section className="w-full min-h-screen flex flex-col-reverse lg:flex-row items-center justify-center px-4 md:px-10 lg:px-20 py-10 gap-10 text-white relative">
+    <section
+      id="hero"
+      className="
+        w-full
+        min-h-screen
+        pt-20              /* offset below fixed navbar (≈80px) */
+        flex flex-col-reverse lg:flex-row
+        items-center justify-center
+        px-4 md:px-10 lg:px-20
+        pb-10             /* bottom padding */
+        gap-10 text-white relative
+      "
+    >
       {/* Left Section */}
       <div className="flex-1 w-full text-center lg:text-left">
         <h1 className="text-3xl sm:text-3xl md:text-4xl font-extrabold leading-tight">

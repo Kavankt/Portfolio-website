@@ -9,18 +9,13 @@ const NavbarMain = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
-      {/* Nav Background */}
-      <div className="bg-[#0f172a] sm:bg-transparent shadow-md sm:shadow-none w-full">
-        <div className="flex items-center justify-between w-full max-w-[1300px] mx-auto px-4 py-4">
-          {/* Logo */}
+      {/* Mobile: Solid bg | Desktop: Transparent */}
+      <div className="w-full bg-[#0f172a] sm:bg-transparent sm:backdrop-blur-none sm:shadow-none shadow-md">
+        <div className="flex items-center justify-between max-w-[1300px] mx-auto px-4 py-4">
           <NavbarLogo />
-
-          {/* Desktop Links */}
           <div className="hidden lg:block">
             <NavbarLinks />
           </div>
-
-          {/* Resume + Toggler */}
           <div className="flex items-center gap-4">
             <NavbarBtn />
             <div className="lg:hidden">
@@ -29,9 +24,9 @@ const NavbarMain = () => {
           </div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
+        {/* Mobile menu (when open) */}
         {menuOpen && (
-          <div className="block lg:hidden bg-[#0f172a] w-full px-4 pb-4">
+          <div className="block lg:hidden bg-[#0f172a] px-4 pb-4">
             <NavbarLinks />
           </div>
         )}
