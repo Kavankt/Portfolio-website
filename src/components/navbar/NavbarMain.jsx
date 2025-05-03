@@ -9,15 +9,23 @@ const NavbarMain = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-transparent">
-      <div className="flex justify-between items-center w-full max-w-[1300px] mx-auto px-4 py-4">
+      <div className="flex items-center justify-between w-full max-w-[1300px] mx-auto px-4 py-4">
+        {/* Logo */}
         <NavbarLogo />
+
+        {/* Desktop Menu Links */}
         <div className={`${menuOpen ? "sm:block" : "sm:hidden"} lg:block`}>
           <NavbarLinks />
         </div>
-        <NavbarBtn />
-        {/* Mobile Toggler */}
-        <div className="lg:hidden absolute right-6 top-5">
-          <NavbarToggler />
+
+        {/* Right section: Resume button + toggler */}
+        <div className="flex items-center gap-4">
+          <NavbarBtn />
+
+          {/* Mobile Toggler - now placed beside resume button, not overlapping */}
+          <div className="lg:hidden">
+            <NavbarToggler />
+          </div>
         </div>
       </div>
     </nav>
