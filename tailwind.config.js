@@ -6,7 +6,7 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   safelist: [
-    'animate-glow',    // ensure this class never gets purged
+    'animate-glow',   
     'shadow-glow',
   ],
   theme: {

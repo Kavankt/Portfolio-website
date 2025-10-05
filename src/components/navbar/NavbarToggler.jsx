@@ -13,20 +13,16 @@ const NavbarToggler = () => {
     <motion.button
       type="button"
       onClick={() => dispatch(toggleMenu())}
-      animate={{ rotate: menuOpen ? 180 : 0 }} // Rotate on toggle
-      transition={{ type: "spring", stiffness: 400, damping: 20 }}
-      whileTap={{ scale: 0.95 }} // Slight scale down on tap
+      animate={{ rotate: menuOpen ? 90 : 0 }} // subtle rotation
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      whileTap={{ scale: 0.9 }} // Slight scale down on tap
       className="
-        p-2
-        bg-transparent
+        p-1.5
         text-white
-        text-3xl
-        hover:scale-110
-        hover:text-purple-500
-        transition-all
-        duration-300
-        relative
-        animate-glow
+        text-2xl
+        hover:text-purple-400
+        transition-colors duration-300
+        flex items-center justify-center
       "
     >
       {menuOpen ? (

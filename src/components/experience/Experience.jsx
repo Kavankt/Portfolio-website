@@ -14,7 +14,7 @@ const experiences = [
   {
     company: "Ukshati Technologies Pvt Ltd, Mangalore",
     role: "Intern",
-    description: `Developing and maintaining cross-platform mobile applications using React Native. Collaborating with cross-functional teams to design and implement application features, ensuring smooth user experiences. Enhancing app performance and resolving bugs to optimize functionality.`,
+    description: `Developed and maintained cross-platform mobile applications using React Native. Collaborated with cross-functional teams to implement features and enhance app performance, ensuring smooth user experience.`,
     logo: UkshatiLogo,
     tech: ["React Native", "MySQL", "Node.js"]
   }
@@ -22,41 +22,45 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="text-white py-16 px-6 md:px-20">
-      {/* Title with motion from top */}
+    <section id="experience" className="text-white py-12 px-4 md:px-16">
+      {/* Title */}
       <motion.h2
-        className="text-4xl font-bold text-center mb-12"
-        initial={{ opacity: 0, y: -50 }}
+        className="text-3xl md:text-4xl font-bold text-center mb-10"
+        initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
         Experience
       </motion.h2>
 
-      <div className="space-y-16">
+      <div className="flex flex-col gap-8 md:gap-10">
         {experiences.map((exp, index) => (
           <motion.div
             key={index}
-            className="flex flex-col md:flex-row items-center gap-10 bg-[#111827] p-6 rounded-xl transition-all duration-300 hover:shadow-[0_0_25px_5px_rgba(168,85,247,0.5)] border border-purple-900"
-            initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+            className="flex flex-col md:flex-row items-center gap-6 md:gap-8 p-4 md:p-6 rounded-xl border border-gray-700 bg-gray-900/70 hover:shadow-lg hover:shadow-purple-500/40 transition-all duration-300"
+            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
+            transition={{ duration: 0.5, delay: index * 0.15 }}
             viewport={{ once: true }}
           >
+            {/* Logo */}
             <img
               src={exp.logo}
               alt={exp.company}
-              className="w-36 h-36 object-contain"
+              className="w-24 h-24 md:w-28 md:h-28 object-contain flex-shrink-0"
             />
-            <div className="max-w-2xl">
-              <h3 className="text-xl font-semibold">
-                {exp.role} – <span className="font-medium text-purple-400">{exp.company}</span>
+            
+            {/* Info */}
+            <div className="flex-1">
+              <h3 className="text-lg md:text-xl font-semibold">
+                {exp.role} – <span className="text-purple-400 font-medium">{exp.company}</span>
               </h3>
-              <p className="mt-2 text-gray-300 whitespace-pre-line">{exp.description}</p>
-              <div className="flex flex-wrap mt-4 gap-2">
+              <p className="mt-2 text-gray-300 text-sm md:text-base leading-relaxed">{exp.description}</p>
+              
+              <div className="flex flex-wrap mt-3 gap-2">
                 {exp.tech.map((tech, i) => (
-                  <span key={i} className="bg-purple-900 px-3 py-1 rounded-full text-sm">
+                  <span key={i} className="bg-purple-800/80 text-purple-200 px-2 py-1 rounded-full text-xs md:text-sm">
                     {tech}
                   </span>
                 ))}

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 import { MdEmail } from "react-icons/md";
@@ -48,76 +50,97 @@ const HeroMain = () => {
   return (
     <section
       id="hero"
-      className="
-        w-full
-        min-h-screen
-        pt-20              /* offset below fixed navbar (≈80px) */
-        flex flex-col-reverse lg:flex-row
-        items-center justify-center
-        px-4 md:px-10 lg:px-20
-        pb-10             /* bottom padding */
-        gap-10 text-white relative
-      "
+      className="w-full min-h-screen flex flex-col-reverse lg:flex-row items-center justify-center px-4 md:px-10 lg:px-20 pt-20 pb-10 text-white relative overflow-hidden"
     >
       {/* Left Section */}
-      <div className="flex-1 w-full text-center lg:text-left">
-        <h1 className="text-3xl sm:text-3xl md:text-4xl font-extrabold leading-tight">
+      <motion.div
+        className="flex-1 w-full text-center lg:text-left"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
           <span className="text-white font-sans">
             {displayText}
             <span className="animate-pulse">|</span>
           </span>
           <br />
-          {/* Glowing Developer Text */}
-          <span className="relative inline-block mt-4 group">
-            <span className="absolute inset-0 rounded-md bg-blue-400 opacity-30 blur-2xl group-hover:opacity-50 transition duration-300"></span>
-            <span className="relative text-5xl sm:text-6xl font-extrabold bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text drop-shadow-[0_0_25px_#60a5fa] group-hover:drop-shadow-[0_0_40px_#60a5fa] transition duration-300">
-              Developer
-            </span>
-          </span>
+          <motion.span
+            className="relative inline-block mt-4 text-5xl sm:text-6xl font-extrabold bg-gradient-to-r from-purple-400 to-indigo-500 text-transparent bg-clip-text drop-shadow-[0_0_25px_rgba(139,92,246,0.7)]"
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+          >
+            Developer
+          </motion.span>
         </h1>
 
-        <p className="mt-4 text-lg sm:text-xl font-medium text-gray-300">
-          Computer Science & Engineering (Data Science)
-        </p>
-        <p className="mt-2 text-sm sm:text-base text-gray-400 max-w-md mx-auto lg:mx-0">
-          As a full-stack developer and data enthusiast, I'm constantly exploring new tools to build smarter, modern web solutions.
-        </p>
+        <motion.p
+          className="mt-4 text-lg sm:text-xl font-medium text-gray-300 max-w-lg mx-auto lg:mx-0"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          Computer Science & Data Science graduate specializing in creating scalable, innovative web applications that prioritize performance and user experience.
+        </motion.p>
 
         {/* Tech Stack */}
-        <div className="mt-6 flex flex-wrap justify-center lg:justify-start gap-3">
-          {["ReactJS", "NextJS", "Python", "MySQL", "Jest"].map((tech) => (
-            <div key={tech} className="relative group">
-              <div className="bg-transparent text-white px-4 py-2 rounded-md whitespace-nowrap transition-all duration-300 relative hover:bg-blue-600/30 hover:scale-105 hover:shadow-[0_0_15px_3px_rgba(59,130,246,0.5)] font-semibold border-2 border-white">
-                {tech}
-                <div className="absolute inset-0 rounded-md pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-blue-400/20 via-blue-400/10 to-transparent"></div>
-              </div>
-            </div>
+        <motion.div
+          className="mt-6 flex flex-wrap justify-center lg:justify-start gap-3"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.7 }}
+        >
+          {[ "HTML", "CSS","ReactJS", "Javascript", "MySQL"].map((tech) => (
+            <motion.div
+              key={tech}
+              className="border border-white px-3 py-1 rounded-md text-sm sm:text-base font-semibold hover:bg-purple-600/30 hover:scale-105 hover:shadow-[0_0_15px_3px_rgba(139,92,246,0.5)] transition-all duration-300 cursor-default"
+            >
+              {tech}
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Buttons */}
-        <div className="mt-6 flex flex-wrap gap-4 justify-center lg:justify-start">
-          <a
-            href="#projects"
-            className="bg-purple-600 px-4 py-1 rounded-sm flex items-center gap-2 hover:bg-purple-700 hover:shadow-[0_0_10px_2px_rgba(139,92,246,0.5)] transition-all duration-300"
+        <motion.div
+          className="mt-6 flex flex-wrap gap-4 justify-center lg:justify-start"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.9 }}
+        >
+          <Link
+            to="skills"
+            smooth={true}
+            duration={800}
+            offset={-80}
+            className="bg-purple-600 px-4 py-2 rounded-md flex items-center gap-2 hover:bg-purple-700 hover:shadow-[0_0_15px_5px_rgba(139,92,246,0.5)] transition-all duration-300 cursor-pointer text-sm sm:text-base"
           >
             Projects <FiExternalLink />
-          </a>
-          <a
-            href="#contact"
-            className="bg-purple-600 px-4 py-1 rounded-sm flex items-center gap-2 hover:bg-purple-700 hover:shadow-[0_0_10px_2px_rgba(139,92,246,0.5)] transition-all duration-300"
+          </Link>
+
+          <Link
+            to="contact"
+            smooth={true}
+            duration={800}
+            offset={-80}
+            className="bg-purple-600 px-4 py-2 rounded-md flex items-center gap-2 hover:bg-purple-700 hover:shadow-[0_0_15px_5px_rgba(139,92,246,0.5)] transition-all duration-300 cursor-pointer text-sm sm:text-base"
           >
             Contact <MdEmail />
-          </a>
-        </div>
+          </Link>
+        </motion.div>
 
         {/* Social Icons */}
-        <div className="mt-6 flex gap-6 justify-center lg:justify-start">
+        <motion.div
+          className="mt-6 flex gap-6 justify-center lg:justify-start"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.1 }}
+        >
           <a
             href="https://github.com/Kavankt"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-purple-400 transition-colors duration-300 hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.6)]"
+            className="hover:text-purple-400 transition-colors duration-300"
           >
             <FaGithub size={24} />
           </a>
@@ -125,7 +148,7 @@ const HeroMain = () => {
             href="https://www.linkedin.com/in/kavan-k-t/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-purple-400 transition-colors duration-300 hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.6)]"
+            className="hover:text-purple-400 transition-colors duration-300"
           >
             <FaLinkedin size={24} />
           </a>
@@ -133,21 +156,26 @@ const HeroMain = () => {
             href="https://www.instagram.com/kavannn._"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-purple-400 transition-colors duration-300 hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.6)]"
+            className="hover:text-purple-400 transition-colors duration-300"
           >
             <FaInstagram size={24} />
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Right Section - Profile Picture */}
-      <div className="flex-1 w-full flex justify-center lg:justify-end">
+      <motion.div
+        className="flex-1 w-full flex justify-center lg:justify-end"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+      >
         <img
           src={profilePic}
           alt="Profile"
-          className="w-[250px] sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[550px] h-auto rounded-sm shadow-lg object-contain"
+          className="w-[250px] sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[550px] h-auto rounded-lg object-contain"
         />
-      </div>
+      </motion.div>
     </section>
   );
 };

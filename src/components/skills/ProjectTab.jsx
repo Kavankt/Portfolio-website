@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import CardProject from "./CardProject"; // ✅ Fixed path
+import CardProject from "./CardProject";
 import { projects } from "../../data/projects";
+import { motion } from "framer-motion";
 
 const ProjectTab = () => {
   const [visibleProjects, setVisibleProjects] = useState(3);
@@ -9,12 +10,31 @@ const ProjectTab = () => {
     setVisibleProjects((prev) => prev + 3);
   };
 
+  // Motion variants for staggered animation
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
   return (
-    <div className="py-8">
-      {/* Mobile-first: flex-col with centered, full‑width cards */}
-      <div className="flex flex-col items-center gap-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8">
+    <div className="py-12 px-4 sm:px-6 lg:px-20">
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         {projects.slice(0, visibleProjects).map((project) => (
-          <div key={project.id} className="w-full max-w-md">
+          <motion.div key={project.id} variants={cardVariants}>
             <CardProject
               id={project.id}
               Title={project.Title}
@@ -22,18 +42,20 @@ const ProjectTab = () => {
               Img={project.Img}
               ProjectLink={project.ProjectLink}
             />
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {visibleProjects < projects.length && (
         <div className="flex justify-center mt-10">
-          <button
+          <motion.button
+            whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(0,255,255,0.5)" }}
+            whileTap={{ scale: 0.95 }}
             onClick={handleSeeMore}
             className="flex items-center gap-2 px-6 py-2 rounded-md bg-white/10 hover:bg-white/20 text-white/80 transition-all duration-300"
           >
             See More
-          </button>
+          </motion.button>
         </div>
       )}
     </div>
