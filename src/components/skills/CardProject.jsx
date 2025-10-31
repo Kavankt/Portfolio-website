@@ -1,73 +1,59 @@
-import React, { useState } from "react";
-import CardProject from "./CardProject";
-import { projects } from "../../data/projects";
+import React from "react";
 import { motion } from "framer-motion";
 
-const ProjectTab = () => {
-  const [visibleProjects, setVisibleProjects] = useState(3);
-
-  const handleSeeMore = () => setVisibleProjects((prev) => prev + 3);
-
-  const containerVariants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.15 } },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30, x: -20 },
-    visible: { opacity: 1, y: 0, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
-    hover: { scale: 1.03, boxShadow: "0 10px 25px rgba(0,0,0,0.3)" },
-  };
-
-  const buttonVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-  };
-
+const CardProject = ({ id, Title, Description, Img, ProjectLink, onViewDetails }) => {
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-20">
-      <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {projects.slice(0, visibleProjects).map((project) => (
-          <motion.div
-            key={project.id}
-            variants={cardVariants}
-            whileHover="hover"
-          >
-            <CardProject
-              id={project.id}
-              Title={project.Title}
-              Description={project.Description}
-              Img={project.Img}
-              ProjectLink={project.ProjectLink}
-            />
-          </motion.div>
-        ))}
-      </motion.div>
+    <motion.div
+      key={id}
+      whileHover={{ scale: 1.04 }}
+      transition={{ type: "spring", stiffness: 180, damping: 18 }}
+      className="w-[320px] sm:w-[330px] md:w-[340px] h-[360px] flex flex-col justify-between
+                 rounded-2xl overflow-hidden backdrop-blur-md border border-white/10 
+                 cursor-pointer hover:border-cyan-400/40 hover:shadow-[0_0_25px_rgba(34,211,238,0.4)]
+                 transition-all duration-500 group bg-transparent"
+    >
+      {/* Project Image */}
+      <div className="relative h-[170px] overflow-hidden rounded-t-2xl">
+        <img
+          src={Img}
+          alt={Title}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      </div>
 
-      {visibleProjects < projects.length && (
-        <motion.div
-          className="flex justify-center mt-10"
-          variants={buttonVariants}
-          initial="hidden"
-          animate="visible"
+      {/* Text Content */}
+      <div className="p-5 flex flex-col justify-between flex-grow text-center">
+        <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 tracking-wide">
+          {Title}
+        </h3>
+        <p className="text-gray-300 text-sm sm:text-base leading-relaxed line-clamp-3 mb-3">
+          {Description}
+        </p>
+
+        {/* View Details Button */}
+        <motion.button
+          onClick={(e) => {
+            e.stopPropagation();
+            if (onViewDetails) onViewDetails(id);
+          }}
+          whileHover={{
+            scale: 1.05,
+            backgroundColor: "rgba(34,211,238,0.15)",
+            borderColor: "rgba(34,211,238,0.6)",
+            color: "#fff",
+          }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="mt-auto mx-auto px-5 py-1.5 text-sm font-medium 
+                     text-cyan-300 border border-cyan-300/60 rounded-md 
+                     bg-white/10 hover:bg-cyan-400/20 transition-all duration-300"
         >
-          <motion.button
-            whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(0,255,255,0.5)" }}
-            whileTap={{ scale: 0.95 }}
-            onClick={handleSeeMore}
-            className="flex items-center gap-2 px-6 py-2 rounded-md bg-white/10 hover:bg-white/20 text-white/80 transition-all duration-300"
-          >
-            See More
-          </motion.button>
-        </motion.div>
-      )}
-    </div>
+          View Details
+        </motion.button>
+      </div>
+    </motion.div>
   );
 };
 
-export default ProjectTab;
+export default CardProject;

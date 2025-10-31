@@ -1,3 +1,4 @@
+// StarBackground.jsx  
 import React from 'react';
 import './StarBackground.css';
 
@@ -11,7 +12,7 @@ const getRandomStyle = () => {
     left: `${left}%`,
     width: `${size}px`,
     height: `${size}px`,
-    animationDelay: `${delay}s, ${delay}s`, // For both twinkle and drift
+    animationDelay: `${delay}s, ${delay}s`, // Both twinkle and drift animation delay
   };
 };
 

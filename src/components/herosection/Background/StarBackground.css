@@ -1,10 +1,12 @@
+/* StarBackground.css */
+
 .night {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, #0b0f1a 0%, #0d1b2a 40%, #090c14 100%);
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, #0a0c14 0%, #1a2032 85%);
   overflow: hidden;
   z-index: -1;
 }
@@ -12,18 +14,17 @@
 /* Star base style */
 .star {
   position: absolute;
-  width: 2px;
-  height: 2px;
   background: white;
   border-radius: 50%;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
-  animation: twinkle 2s infinite ease-in-out, drift 40s linear infinite;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+  /* size controlled by inline style */
+  animation: twinkle 2.5s ease-in-out infinite, drift 45s linear infinite;
 }
 
 /* Twinkle effect */
 @keyframes twinkle {
   0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.4); }
+  50% { opacity: 1; transform: scale(1.5); }
 }
 
 /* Slow drifting motion */
@@ -32,16 +33,6 @@
     transform: translate(0px, 0px) scale(1);
   }
   100% {
-    transform: translate(50px, 100px) scale(1.2);
+    transform: translate(45px, 90px) scale(1.2);
   }
-}
-/* global.css or index.css */
-.stars {
-  background: url('/path-to/stars.svg') repeat;
-  animation: twinkling 50s infinite linear;
-}
-
-@keyframes twinkling {
-  from { background-position: 0 0; }
-  to { background-position: -10000px 5000px; }
 }
