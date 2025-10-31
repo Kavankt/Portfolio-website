@@ -1,6 +1,12 @@
 // components/certificates/certificatesData.js
 
 const certificates = [
+  {
+      image: "/certificates/neyaai_certificate.jpg",
+    },
+    {
+      image: "/certificates/ukshati_certificate.jpg",
+    },
     {
       image: "/certificates/TCE-1.png",
     },

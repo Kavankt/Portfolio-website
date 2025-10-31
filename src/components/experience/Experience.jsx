@@ -2,22 +2,30 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import InternshipLogo from '../../assets/Internship.png';
 import UkshatiLogo from '../../assets/logowithleaf.png';
+import NeyaLogo from '../../assets/neyalogo.png';
 
 const experiences = [
   {
-    company: "CoE Digital Forensics Intelligence, Sahyadri Mangalore",
-    role: "Intern",
-    description: `Contributed to a research-driven internship under the Innoventure initiative, focusing on the topic "A Machine Learning Approach for Malware Detection". Explored advanced data science methodologies, built and tested classification models, and studied real-world malware datasets to uncover malicious behavior patterns. Worked under expert mentorship from the CoE in Digital Forensics and Cyber Security.`,
-    logo: InternshipLogo,
-    tech: ["Python", "Data Science", "Machine Learning", "Cyber Security"]
+    company: "Neya Ai (Sky 360)",
+    role: "Software Engineer Trainee",
+    description: `Worked on real-time client projects, collaborating with cross-functional teams to deliver scalable web solutions. Developed and deployed interactive React.js applications integrated with backend services and cloud environments. Built reusable, high-performance UI components to enhance efficiency and user experience.`,
+    logo: NeyaLogo,
+    tech: ["ReactJS","HTML", "CSS", "JavaScript"]
   },
   {
     company: "Ukshati Technologies Pvt Ltd, Mangalore",
-    role: "Intern",
-    description: `Developed and maintained cross-platform mobile applications using React Native. Collaborated with cross-functional teams to implement features and enhance app performance, ensuring smooth user experience.`,
+    role: "Software Development Intern",
+    description: `Contributed to developing a full-featured ERP system with modules for CRM, Inventory, Billing, and Expenses. Implemented role-based access and Docker deployments while optimizing MySQL queries for performance and ensuring seamless collaboration across teams.`,
     logo: UkshatiLogo,
-    tech: ["React Native", "MySQL", "Node.js"]
-  }
+    tech: ["ReactJs", "MySQL", "Node.js", "Docker", "AWS"]
+  },
+  {
+    company: "CoE Digital Forensics Intelligence, Sahyadri Mangalore",
+    role: "Intern",
+    description: `Built a malware detection system using machine learning and security tools to strengthen threat identification and prevention.`,
+    logo: InternshipLogo,
+    tech: ["Python", "Data Science", "Machine Learning", "Cyber Security"]
+  },
 ];
 
 const Experience = () => {

@@ -81,7 +81,7 @@ const HeroMain = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          Computer Science & Data Science graduate specializing in creating scalable, innovative web applications that prioritize performance and user experience.
+          Computer Science & Engineering graduate specializing in creating scalable, innovative web applications that prioritize performance and user experience.
         </motion.p>
 
         {/* Tech Stack */}

@@ -38,7 +38,8 @@ const ProjectTab = () => {
     <div className="py-4 px-6 sm:px-10 lg:px-20">
       {/* Project Cards */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 justify-items-center"
+       className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 justify-items-center"
+
         variants={containerVariants}
         initial="hidden"
         animate="visible"
